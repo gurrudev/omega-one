@@ -1,11 +1,11 @@
 {
     "name": "create-omega-one",
     "description": "Omega One is a Node.js server CLI tool that supports both JavaScript (JS) and TypeScript (TS).",
-    "version": "1.0.4",
+    "version": "1.0.0",
     "main": "index.js",
     "type": "module",
     "bin": {
-        "create-omega-one": "./index.js"
+        "create-omega-one": "index.js"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +22,15 @@
     "dependencies": {
         "inquirer": "^8.0.0"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gurrudev/omega-one.git"
+    },
+    "homepage": "https://github.com/gurrudev/omega-one#readme",
+    "bugs": {
+        "url": "https://github.com/gurrudev/omega-one/issues"
+    },
+
     "devDependencies": {
         "@babel/core": "^7.13.10",
         "eslint": "^7.22.0",

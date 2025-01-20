@@ -22,29 +22,22 @@ Omega One is a Node.js server CLI tool that supports both JavaScript (JS) and Ty
 
 #### Installation
 
-1. Clone the repository:
-    ```sh
-    git clone <repository-url>
-    cd <repository-directory>
-    ```
+Install dependencies:
 
-2. Install dependencies:
-    ```sh
-    npm install
-    ```
+```sh
+npm i -g create-omega-one
+```
 
 #### Usage
 
 To create a new project, run the following command:
 
 ```sh
-npx create-omega-one
+npx create omega-one
 ```
 You will be prompted to provide the project name, choose between JavaScript and TypeScript, and optionally include Mongoose, ESLint, and Prettier.
 
 <a href="https://github.com/user-attachments/assets/c0bae335-8715-453e-9272-d05600d59974">Watch Video</a>
-
-
 
 ### Scripts
 * `start`: Starts the server.
