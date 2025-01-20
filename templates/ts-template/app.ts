@@ -4,29 +4,59 @@ import express, {
     Response,
     NextFunction,
     ErrorRequestHandler,
-} from "express";
-import { Server } from "http";
+} from 'express';
+import createHttpError from 'http-errors';
+import cors from 'cors';
+import morgan from 'morgan';
+import router from './router/routes';
+import fs from 'fs';
+import path from 'path';
+import { createStream } from 'rotating-file-stream';
+import { engine } from 'express-handlebars';
+
 const app: Application = express();
-import createHttpError from "http-errors";
-import router from "./router/routes";
 
-app.use("/", router);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
-const PORT: string = process.env.PORT || "3000";
+app.engine('html', engine({ extname: '.html' }));
+app.set('view engine', 'html');
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(morgan('dev'));
+const logDirectory = path.join(__dirname, 'logs');
+fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+
+const accessLogStream = createStream('access.log', {
+    interval: '7d', // rotate weekly
+    path: logDirectory,
+});
+
+app.use(morgan('combined', { stream: accessLogStream }));
+
+app.get('/', (req: Request, res: Response) => {
+    res.render('index');
+});
+
+app.use('/api', router);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
     next(new createHttpError.NotFound());
 });
 
-const errorHandler: ErrorRequestHandler = (err: any, req: Request, res: Response, next: NextFunction) => {
+const errorHandler: ErrorRequestHandler = (
+    err: any,
+    req: Request,
+    res: Response,
+    next: NextFunction
+) => {
     res.status(err.status || 500);
     res.json({
-        message: err.message || "Internal Server Error",
+        message: err.message || 'Internal Server Error',
     });
 };
 
 app.use(errorHandler);
 
-const server: Server = app.listen(PORT, () => {
-    console.log(`Server is live on port: ${PORT} 🚀`);
-});
+export default app;
