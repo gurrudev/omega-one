@@ -1,7 +1,7 @@
 {
     "name": "create-omega-one",
     "description": "Omega One is a Node.js server CLI tool that supports both JavaScript (JS) and TypeScript (TS).",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "index.js",
     "type": "module",
     "bin": {
