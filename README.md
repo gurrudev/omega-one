@@ -42,7 +42,7 @@ npx create-omega-one
 ```
 You will be prompted to provide the project name, choose between JavaScript and TypeScript, and optionally include Mongoose, ESLint, and Prettier.
 
-https://github.com/user-attachments/assets/c0bae335-8715-453e-9272-d05600d59974
+<a href="https://github.com/user-attachments/assets/c0bae335-8715-453e-9272-d05600d59974">Watch Video</a>
 
 
 
