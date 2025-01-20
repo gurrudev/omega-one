@@ -101,7 +101,7 @@ function addMongoose(projectPath, languageChoice) {
     const dbConfigContent =
         languageChoice === 'JavaScript'
             ? `import mongoose from 'mongoose';
-            
+
 const connectDB = async (MONGO_URI) => {
     try {
         await mongoose.connect(MONGO_URI, {
@@ -117,7 +117,7 @@ const connectDB = async (MONGO_URI) => {
 
 export default connectDB;`
             : `import mongoose from 'mongoose';
-            
+
 const connectDB = async (MONGO_URI: string): Promise<void> => {
     try {
         await mongoose.connect(MONGO_URI, {

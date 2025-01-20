@@ -1,28 +1,34 @@
 {
-  "name": "omega-one",
-  "description": "CLI tool for instantiating projects",
-  "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
-  "bin": {
-    "create": "./index.js"  
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "ASHUTOSH PAWAR",
-  "license": "ISC",
-  "dependencies": {
-    "inquirer": "^8.0.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "eslint": "^7.22.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "^2.2.1"
-  }
+    "name": "create-omega-one",
+    "description": "Omega One is a Node.js server CLI tool that supports both JavaScript (JS) and TypeScript (TS).",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "bin": {
+        "create-omega-one": "./index.js"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "omega-one",
+        "server",
+        "api-server",
+        "cli",
+        "tool"
+    ],
+    "author": "ASHUTOSH PAWAR",
+    "license": "ISC",
+    "dependencies": {
+        "inquirer": "^8.0.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.13.10",
+        "eslint": "^7.22.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-config-prettier": "^8.1.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-prettier": "^3.3.1",
+        "prettier": "^2.2.1"
+    }
 }
